@@ -1,0 +1,7 @@
+(*Runs in 0.000100 seconds*)
+sol =
+  Timing[
+   
+   LCM @@ Range@20
+   
+   ];
