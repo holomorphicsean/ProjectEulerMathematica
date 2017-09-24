@@ -1,0 +1,6 @@
+(*Runs in .004645 seconds*)
+sol = Timing[
+   
+   FactorInteger[600851475143][[-1]][[1]]
+   
+   ];
