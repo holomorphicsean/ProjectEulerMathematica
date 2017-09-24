@@ -1,0 +1,15 @@
+(*8-core parallel version; runs in 0.360175 seconds*)
+sol = AbsoluteTiming[
+   
+   Module[{maxPalindrome, list},
+    
+    list = 
+     Union@Flatten@Outer[Times, Range[100, 999], Range[100, 999]];
+    maxPalindrome[list_] := 
+     Max[Select[list, ToString[#1] == StringReverse[ToString[#1]] &]];
+    
+    Max[ParallelMap[maxPalindrome[#] &, 
+      Partition[list, Floor[Length@list/8]]]]
+    ]
+   
+   ];
