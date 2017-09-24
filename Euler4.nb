@@ -1,0 +1,8 @@
+(*Runs in 0.955773 seconds*)
+sol = Timing[
+   
+   Max@Select[
+     Union@Flatten@Outer[Times, Range[100, 999], Range[100, 999]], 
+     ToString@# == StringReverse@ToString@# &]
+   
+   ];
